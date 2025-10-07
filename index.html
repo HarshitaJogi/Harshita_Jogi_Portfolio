@@ -198,6 +198,149 @@
     .is-visible .progress-bar.exp-3 {
       stroke-dashoffset: 275;
     }
+
+    /* --- NEW: Minimal Portfolio Section Styles --- */
+    .portfolio-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+      border: 1px solid #f0f0f0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-color: #e0e0e0;
+    }
+
+    .portfolio-image-wrapper {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portfolio-image-wrapper img {
+      width: auto;
+      height: auto;
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-image-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-content {
+      padding: 25px;
+    }
+
+    .portfolio-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2c3e50;
+    }
+
+    .portfolio-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .tech-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%);
+      color: #455a64;
+      border: 1px solid #c5cae9;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .portfolio-description {
+      color: #6c757d;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .portfolio-key-points {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .portfolio-key-points li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 6px;
+      color: #495057;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .portfolio-key-points li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #07bccc;
+    }
+
+    .portfolio-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 10px;
+      color: #07bccc;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    .portfolio-link:hover {
+      color: #0596a5;
+      gap: 8px;
+    }
+
+    /* --- ENHANCED: Areas of Expertise Animation --- */
+    .service-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid transparent;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #667eea;
+      box-shadow: 0 15px 30px rgba(102, 126, 234, 0.1);
+    }
+
+    .service-card .icon {
+      font-size: 3rem;
+      color: #667eea;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover .icon {
+      transform: scale(1.1);
+    }
   </style>
 
 </head>
@@ -236,7 +379,7 @@
       <div class="row">
         <div class="col-lg-11 mx-auto">
           <h1 class="text-white font-tertiary">
-            <span class="hero-intro hero-text-animate delay-1">Hi! I’m</span>
+            <span class="hero-intro hero-text-animate delay-1">Hi! I'm</span>
             <span class="hero-name hero-text-animate delay-2">Harshita Jogi</span>
             <span class="hero-title hero-text-animate delay-3">Software & AI Engineer</span>
           </h1>
@@ -402,7 +545,7 @@
             </div>
             <div>
               <p class="text-dark mb-1">Sept 2025 – May 2027</p>
-              <h4>Master’s in Computer Science</h4>
+              <h4>Master's in Computer Science</h4>
               <p class="mb-0 text-light">Northeastern University, Boston</p>
             </div>
           </div>
@@ -430,71 +573,98 @@
           <h2 class="section-title">Areas of Expertise</h2>
         </div>
         <div class="col-md-4 mb-4 mb-md-0">
-          <div class="card hover-shadow shadow">
-            <div class="card-body text-center px-4 py-5">
-              <i class="ti-cloud-up icon mb-5 d-inline-block"></i>
-              <h4 class="mb-4">Cloud Architecture & DevOps</h4>
-              <p>Designing and managing scalable cloud infrastructure using GCP and Azure. Expert in Kubernetes, Docker,
-                and creating robust CI/CD pipelines.</p>
-            </div>
+          <div class="service-card">
+            <i class="ti-cloud-up icon mb-5 d-inline-block"></i>
+            <h4 class="mb-4">Cloud Architecture & DevOps</h4>
+            <p>Designing and managing scalable cloud infrastructure using GCP and Azure. Expert in Kubernetes, Docker,
+              and creating robust CI/CD pipelines.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4 mb-md-0">
-          <div class="card active-bg-primary hover-shadow shadow">
-            <div class="card-body text-center px-4 py-5">
-              <i class="ti-layers-alt icon mb-5 d-inline-block"></i>
-              <h4 class="mb-4">Full-Stack Development</h4>
-              <p>Building resilient backend services with Spring Boot and Node.js, and crafting dynamic user interfaces
-                with React.js and modern JavaScript.</p>
-            </div>
+          <div class="service-card">
+            <i class="ti-layers-alt icon mb-5 d-inline-block"></i>
+            <h4 class="mb-4">Full-Stack Development</h4>
+            <p>Building resilient backend services with Spring Boot and Node.js, and crafting dynamic user interfaces
+              with React.js and modern JavaScript.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4 mb-md-0">
-          <div class="card hover-shadow shadow">
-            <div class="card-body text-center px-4 py-5">
-              <i class="ti-pulse icon mb-5 d-inline-block"></i>
-              <h4 class="mb-4">Data Engineering & AI</h4>
-              <p>Developing high-performance ETL pipelines with PySpark and building intelligent systems with
-                TensorFlow, specializing in NLP and Computer Vision.</p>
-            </div>
+          <div class="service-card">
+            <i class="ti-pulse icon mb-5 d-inline-block"></i>
+            <h4 class="mb-4">Data Engineering & AI</h4>
+            <p>Developing high-performance ETL pipelines with PySpark and building intelligent systems with
+              TensorFlow, specializing in NLP and Computer Vision.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- NEW MINIMAL PORTFOLIO SECTION -->
   <section class="section">
     <div class="container">
       <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mb-5">
           <h2 class="section-title">Portfolio</h2>
         </div>
       </div>
-      <div class="row shuffle-wrapper justify-content-center">
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="images/portfolio/item-1.png" alt="Aeromatic Project" class="img-fluid rounded w-100">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <h4 class="text-white mb-3">Aeromatic Tool</h4>
-                <a class="btn btn-light btn-sm" href="portfolio.html">view project</a>
+      <div class="row">
+        <!-- Aeromatic Project -->
+        <div class="col-lg-6 mb-4">
+          <div class="portfolio-item">
+            <div class="portfolio-image-wrapper">
+              <img src="images/portfolio/aeromatic_logo.jpeg" alt="Aeromatic Tool">
+            </div>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Aeromatic - Industrial Audit Tool</h3>
+              <div class="portfolio-tech">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">JWT</span>
+                <span class="tech-badge">Supabase</span>
               </div>
+              <p class="portfolio-description">
+                Streamlined boiler audit platform reducing manual processing by 70%
+              </p>
+              <ul class="portfolio-key-points">
+                <li>20+ React screens with dynamic forms</li>
+                <li>PDF generation with versioning</li>
+                <li>Secure JWT authentication</li>
+              </ul>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="images/portfolio/item-2.png" alt="Smart Agriculture Project" class="img-fluid rounded w-100">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <h4 class="text-white mb-3">Drones for Smart Agriculture</h4>
-                <a class="btn btn-light btn-sm" href="portfolio.html">view project</a>
+
+        <!-- Smart Agriculture Project -->
+        <div class="col-lg-6 mb-4">
+          <div class="portfolio-item">
+            <div class="portfolio-image-wrapper">
+              <img src="images/portfolio/ieee.png" alt="Smart Agriculture">
+            </div>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Drones for Smart Agriculture</h3>
+              <div class="portfolio-tech">
+                <span class="tech-badge">TensorFlow</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">NDVI</span>
+                <span class="tech-badge">Nvidia Jetson</span>
               </div>
+              <p class="portfolio-description">
+                AI-powered drone system with $25,000 IEEE funding
+              </p>
+              <ul class="portfolio-key-points">
+                <li>Precise geospatial crop mapping</li>
+                <li>Edge-optimized deep learning model</li>
+                <li>Real-time NDVI analysis</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <section class="section pb-0">
     <div class="container">
       <div class="row">
@@ -504,7 +674,7 @@
       </div>
       <div class="client-logo-slider d-flex align-items-center">
         <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
-            src="images/clients-logo/client-logo-1.png" alt="client-logo"></a>
+            src="images/clients-logo/java.png" alt="client-logo"></a>
         <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
             src="images/clients-logo/client-logo-2.png" alt="client-logo"></a>
         <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
