@@ -1,156 +1,264 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>Portfolio Template</title>
+  <title>Contact | Harshita Jogi</title>
 
-  <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <!-- ** Plugins Needed for the Project ** -->
-  <!-- Bootstrap -->
+
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <!-- slick slider -->
   <link rel="stylesheet" href="plugins/slick/slick.css">
-  <!-- themefy-icon -->
   <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
 
-  <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
-  
-  <!--Favicon-->
+
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <style>
+    /* Page title animation */
+    .page-title-animate {
+      opacity: 0;
+      animation: fadeInDown 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Contact info cards animation */
+    .contact-info-card {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid transparent;
+      height: 100%;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .contact-info-card:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+
+    .contact-info-card:nth-child(2) {
+      animation-delay: 0.7s;
+    }
+
+    .contact-info-card:nth-child(3) {
+      animation-delay: 0.9s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-5px);
+      border-color: #07bccc;
+      box-shadow: 0 15px 30px rgba(7, 188, 204, 0.1);
+    }
+
+    .contact-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px auto;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-info-card:hover .contact-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .contact-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .contact-info-card h5 {
+      color: #2c3e50;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .contact-info-card p {
+      color: #6c757d;
+      font-size: 1.1rem;
+      margin: 0;
+      word-break: break-word;
+    }
+
+    .contact-info-card a {
+      color: #6c757d;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info-card:hover a {
+      color: #07bccc;
+    }
+
+    /* Section spacing */
+    .contact-section {
+      padding: 80px 0;
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        padding: 50px 0;
+      }
+
+      .contact-info-card {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 
 </head>
 
 <body>
-  
 
-<header class="navigation fixed-top">
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand font-tertiary h3" href="index.html"><img src="images/logo.png" alt="Myself"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <header class="navigation fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse text-center" id="navigation">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">about</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="blog.html">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="portfolio.html">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
-<!-- page title -->
-<section class="page-title bg-primary position-relative">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Contacts</h1>
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
       </div>
-    </div>
-  </div>
-  <!-- background shapes -->
-  <img src="images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
-  <img src="images/illustrations/leaf-pink-round.png" alt="illustrations" class="bg-shape-2">
-  <img src="images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
-  <img src="images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
-  <img src="images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
-  <img src="images/illustrations/dots-group-cyan.png" alt="illustrations" class="bg-shape-6">
-  <img src="images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
-</section>
-<!-- /page title -->
+    </nav>
+  </header>
 
-<!-- contact -->
-<section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="section-title">Contact Info</h2>
-      </div>
-      <div class="col-lg-8 mx-auto">
-        <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
-          <form action="#" class="row">
-            <div class="col-md-6">
-              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
-            </div>
-            <div class="col-md-6">
-              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4">
-            </div>
-            <div class="col-12">
-              <textarea name="message" id="message" class="form-control px-0 mb-4"
-                placeholder="Type Message Here"></textarea>
-            </div>
-            <div class="col-lg-6 col-10 mx-auto">
-              <button class="btn btn-primary w-100">send</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /contact -->
-
-<!-- footer -->
-<footer class="bg-dark footer-section">
-  <div class="section">
+  <!-- page title -->
+  <section class="page-title bg-primary position-relative">
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
-          <h5 class="text-light">Email</h5>
-          <p class="text-white paragraph-lg font-secondary">steve.fruits@email.com</p>
-        </div>
-        <div class="col-md-4">
-          <h5 class="text-light">Phone</h5>
-          <p class="text-white paragraph-lg font-secondary">+880 2544 658 256</p>
-        </div>
-        <div class="col-md-4">
-          <h5 class="text-light">Address</h5>
-          <p class="text-white paragraph-lg font-secondary">125/A, CA Commercial Area, California, USA</p>
+        <div class="col-12 text-center">
+          <h1 class="text-white font-tertiary page-title-animate">Get In Touch</h1>
         </div>
       </div>
     </div>
-  </div>
-  <div class="border-top text-center border-dark py-5">
-    <p class="mb-0 text-light">Copyright ©<script>
-        var CurrentYear = new Date().getFullYear()
-        document.write(CurrentYear)
-      </script> a theme by <a href="themefisher.com">themefisher.com</a></p>
-  </div>
-</footer>
-<!-- /footer -->
+    <!-- background shapes -->
+    <img src="images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
+    <img src="images/illustrations/leaf-pink-round.png" alt="illustrations" class="bg-shape-2">
+    <img src="images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
+    <img src="images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
+    <img src="images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
+    <img src="images/illustrations/dots-group-cyan.png" alt="illustrations" class="bg-shape-6">
+    <img src="images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
+  </section>
+  <!-- /page title -->
 
-<!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- slick slider -->
-<script src="plugins/slick/slick.min.js"></script>
-<!-- filter -->
-<script src="plugins/shuffle/shuffle.min.js"></script>
+  <!-- contact -->
+  <section class="section contact-section" data-background="images/backgrounds/bg-dots.png">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="contact-info-card">
+            <div class="contact-icon">
+              <i class="ti-email"></i>
+            </div>
+            <h5>Email</h5>
+            <p><a href="mailto:harshitajogi2001@gmail.com">harshitajogi2001@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="contact-info-card">
+            <div class="contact-icon">
+              <i class="ti-mobile"></i>
+            </div>
+            <h5>Phone</h5>
+            <p><a href="tel:+18573318679">(+1) 857-331-8679</a></p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="contact-info-card">
+            <div class="contact-icon">
+              <i class="ti-location-pin"></i>
+            </div>
+            <h5>Location</h5>
+            <p>Boston, MA, USA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /contact -->
 
-<!-- Main Script -->
-<script src="js/script.js"></script>
+  <!-- footer -->
+  <footer class="bg-dark footer-section">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5 class="text-light">Email</h5>
+            <p class="text-white paragraph-lg font-secondary">harshitajogi2001@gmail.com</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="text-light">Phone</h5>
+            <p class="text-white paragraph-lg font-secondary">(+1) 857-331-8679</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="text-light">Address</h5>
+            <p class="text-white paragraph-lg font-secondary">Boston, MA, USA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-top text-center border-dark py-5">
+      <p class="mb-0 text-light">Copyright ©
+        <script>
+          var CurrentYear = new Date().getFullYear()
+          document.write(CurrentYear)
+        </script> Harshita Jogi
+      </p>
+    </div>
+  </footer>
+  <!-- /footer -->
+
+  <script src="plugins/jQuery/jquery.min.js"></script>
+  <script src="plugins/bootstrap/bootstrap.min.js"></script>
+  <script src="plugins/slick/slick.min.js"></script>
+  <script src="plugins/shuffle/shuffle.min.js"></script>
+  <script src="js/script.js"></script>
 
 </body>
+
 </html>
